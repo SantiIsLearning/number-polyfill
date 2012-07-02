@@ -1,12 +1,13 @@
 Number polyfill
 ================
 
-This is a polyfill for implementing the HTML5 &gt;input type="number"&lt; element in browsers that do not currently support it.
+This is a polyfill for implementing the HTML5 **&lt;input type="number"&gt;** element in browsers that do not currently support it.
 
 Usage
 ===============
 
 Using it is easy — simply include the **number-polyfill.js** file in the HEAD of the HTML page. Add a simple modernizr check like so
+<code>
     <script>
     	$(document).ready( function() {
 			if (!Modernizr.inputtypes.number) {
@@ -14,9 +15,10 @@ Using it is easy — simply include the **number-polyfill.js** file in the HEAD 
     		};
     	});
     </script>
-and you can then use &gt;input type="number"&lt; elements normally.
+</code>
+and you can then use &lt;input type="number"&gt; elements normally.
 
-If Modernizr detects that the browser doesn't support &gt;input type="number"&lt;, the script will search for these elements and attach some Javascript to them to make them function as number-only input fields, and add increment/decrement buttons.
+If Modernizr detects that the browser doesn't support &lt;input type="number"&gt;, the script will search for these elements and attach some Javascript to them to make them function as number-only input fields, and add increment/decrement buttons.
 
 A default CSS file is provided. You may edit this file to style the buttons to make them look the way you want.
 
