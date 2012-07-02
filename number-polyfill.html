@@ -7,6 +7,13 @@
     <script src="http://code.jquery.com/jquery.min.js"></script>
     <script src="http://www.modernizr.com/downloads/modernizr-latest.js"></script>
     <script src="number-polyfill.js"></script>
+    <script>
+    	$(document).ready( function() {
+			if (!Modernizr.inputtypes.number) {
+    			numberPolyfillInit();
+    		};
+    	});
+    </script>
   </head>
   <body>
 <form id="form-demo">
