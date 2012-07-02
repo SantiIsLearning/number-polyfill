@@ -3,6 +3,13 @@ Number polyfill
 
 This is a polyfill for implementing the HTML5 **&lt;input type="number"&gt;** element in browsers that do not currently support it.
 
+Difference
+================
+What's the difference between this and [the original number polyfill](https://github.com/jonstipe/number-polyfill)?
+
+Well, the original version uses relative positioning wich destroys layouts way to easy. 
+This implementation changes that by doing an absolute positioning of the tickers instead.
+
 Usage
 ===============
 
