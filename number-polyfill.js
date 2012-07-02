@@ -1,15 +1,18 @@
 function numberPolyfillInit(){
 
   var getParams = function(elem) {
-    var step = jQuery(elem).attr('step');
-    step = /^-?\d+(?:\.\d+)?jQuery/.test(step) ? parseFloat(step) : undefined;
-    var min = jQuery(elem).attr('min');
-    min = /^-?\d+(?:\.\d+)?jQuery/.test(min) ? parseFloat(min) : undefined;
-    var max = jQuery(elem).attr('max');
-    max = /^-?\d+(?:\.\d+)?jQuery/.test(max) ? parseFloat(max) : undefined;
+    var step = elem.getAttribute('step');
+    step = /^-?\d+(?:\.\d+)?$/.test(step) ? parseFloat(step) : undefined;
+    var min = elem.getAttribute('min');
+    min = /^-?\d+(?:\.\d+)?$/.test(min) ? parseFloat(min) : undefined;
+    var max = elem.getAttribute('max');
+    max = /^-?\d+(?:\.\d+)?$/.test(max) ? parseFloat(max) : undefined;
 
-    var val = parseFloat(jQuery(elem).val())
-    if (isNaN(val)) val = min || 0;
+    var val = parseFloat(elem.value);
+
+    if(isNaN(val)) {
+      val = min || 0;
+    }
 
     return {
       min: min,
@@ -224,3 +227,25 @@ function numberPolyfillInit(){
     jQuery(this).css('text-align', 'left');
   });
 };
+
+if (!Array.prototype.indexOf) {
+  Array.prototype.indexOf = function(elt /*, from*/){
+    var len = this.length >>> 0,
+      from = Number(arguments[1]) || 0;
+      
+    from = (from < 0)
+    ? Math.ceil(from)
+    : Math.floor(from);
+    if (from < 0) {
+      from += len;
+    }
+
+    for (; from < len; from++) {
+      if (from in this && this[from] === elt) {
+        return from;
+      }
+    }
+
+    return -1;
+  };
+}
