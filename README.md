@@ -30,4 +30,4 @@ A default CSS file is provided. You may edit this file to style the buttons to m
 Dependencies
 ==============
 
-This script requires [jQuery](http://jquery.com/) and [Modernizr](http://www.modernizr.com/).
+This script requires [jQuery](http://jquery.com/) (tested with version 1.4.4 & 1.7.2) and [Modernizr](http://www.modernizr.com/).
